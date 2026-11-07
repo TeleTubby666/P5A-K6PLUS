@@ -1,0 +1,18 @@
+P5A-K6PLUS
+Copyright (c) 2026 TeleTubby666
+
+K6PLUS follows the logic of K6INIT, Copyright (c) 2021-2026 Eric Voirin (oerg866),
+https://github.com/oerg866/k6init
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike
+4.0 International License (CC BY-NC-SA 4.0), the same license as K6INIT.
+
+To view a copy of this license, visit
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+This license covers the source code and scripts in this repository. The ASUS/Award BIOS
+code contained in the release images is not covered by it and remains the property of
+its respective owners.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. FLASHING A BIOS CAN RENDER
+A MAINBOARD UNBOOTABLE.

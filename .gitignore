@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+k6plus/test/t.rom
+build/
+*.bin
+*.BIN
+!docs/*.bin
+tools/dos/
