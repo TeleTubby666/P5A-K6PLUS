@@ -698,9 +698,14 @@ chipset_tweak:
         mov     eax, 154110B9h
         call    pci_find
         jc      .ret
-        ; size code: smallest n with (1<<n) MB >= size, max 7
+        ; size code: smallest n with (1<<n) MB >= size. The Aladdin V officially
+        ; supports frame buffers up to 16 MB, so the size is capped at 16 MB
+        ; (code 4); write combining itself keeps the full size.
         shr     ecx, 10                 ; MB
-        xor     dx, dx
+        cmp     ecx, 16
+        jbe     .cap
+        mov     cx, 16
+.cap:   xor     dx, dx
 .sz:    mov     ax, 1
         push    cx
         mov     cl, dl

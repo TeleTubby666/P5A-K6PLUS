@@ -57,7 +57,7 @@ case("ALi chipset tweak", st)
 nb, agp = st["pci"][(0, 0)], st["pci"][(0, 1)]
 for n, d in (("M1541", nb), ("M5243", agp)):
     v = d.rd(0x84)
-    check(f"{n} 84h=E405 (32MB) 86h=05, 87h preserved", v == 0xA505E405, hex(v))
+    check(f"{n} 84h=E404 (16MB cap) 86h=05, 87h preserved", v == 0xA505E404, hex(v))
 
 st = run(build(["--wc-vga", "--chipset"]))
 case("VGA WC + chipset", st)
@@ -164,7 +164,7 @@ st = run(build(["--chipset"]), vga="gf2", voodoo="v2sli", mem_kb=524288)
 case("P5A config: GF2 + V2 SLI + chipset", st)
 for k in ((0, 0), (0, 1)):
     v = st["pci"][k].rd(0x84)
-    check(f"{k} 84h = E007 (E0000000, 128MB), 86h=05", v == 0xA505E007, hex(v))
+    check(f"{k} 84h = E004 (E0000000, 16MB), 86h=05", v == 0xA505E004, hex(v))
 check("WC still 128M", st["msr"][0xC0000085] & 0xFFFFFFFF == 0xE0000000 | wc_mask(128) | 2)
 print(repr(st["tty"].strip()))
 
